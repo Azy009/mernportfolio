@@ -7,7 +7,7 @@ const app = express();
 app.use(cors())
 const connectdb = require("./db/connection.js");
 require("./Models/contactus");
-const port = process.env.PORT || "8000";
+const port = process.env.PORT || 8000;
 const database = process.env.database || "mongodb+srv://azy6049:as1816444@cluster0.hxfuyyu.mongodb.net/?retryWrites=true&w=majority";
 
 connectdb(database);
