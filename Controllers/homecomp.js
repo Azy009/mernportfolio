@@ -3,8 +3,8 @@ const contactus = require("../Models/contactus");
 
 const homecomp = async (req, res) =>{
     try{
-
-res.send({satatus:1,records:{}})
+const newer = contactus.find({})
+        res.status(500).json({ error: 'An error occurred',records:newer });
     
 
     
