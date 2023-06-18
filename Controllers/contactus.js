@@ -5,24 +5,23 @@ const appopost = async (req, res) => {
    
 try{
 
-    const {fname,lname,Message,emailID,mobile_no} = req.body
-    console.log(req.body)
+    const {fname,lname,message,emailID,mobile_no} = req.body
+    console.log(req.body);
     const sanddata = new contactus({
-      firstname : 'rsdfavi',
-      lastname : 'sdf',
-      usernumber : 2344937887,
-      email : "esdu",
-      Message : "sjsc"
+      firstname : fname,
+      lastname : lname,
+      usernumber : mobile_no,
+      email : emailID,
+      Message : message
     })
 
     const rel = await sanddata.save()
-
-    // alert('we tell you your appointment time in your email')
-
-    console.log(rel);
+    res.send({status:"sucessful",data:rel})
 
 }catch(err){
     console.log(`  here is errror ${err}`);
+    res.send({status:"faild"})
+
 }
 
 
